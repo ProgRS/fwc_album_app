@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fwc_album_app/app/core/styles/button_styles.dart';
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});
 
@@ -14,11 +15,28 @@ class SplashPage extends StatelessWidget {
               color: Colors.black
             ),
             titleTextStyle: TextStyle(color:  Colors.black)
-            )),
+            ),
+
+        ),
       child: Scaffold(
+      //backgroundColor: Colors.red,
       appBar: AppBar(
         title: const Text('Splash Page'),),
-      body: Container(),
+      body: Center(
+        child: Column(
+          children: [
+            ElevatedButton(
+            onPressed: (){},
+            style: ButtonStyles.instance.primaryButton,
+            child: Text('Salvar'),
+      ),
+            OutlinedButton(
+              onPressed: (){},
+              style: ButtonStyles.instance.primaryOutlineButton,
+              child: Text('Salvar'),
+            ),
+          ],
+        ),),
       ),
     );
   }
