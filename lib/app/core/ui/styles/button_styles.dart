@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fwc_album_app/app/core/styles/text_styles.dart';
+import 'package:fwc_album_app/app/core/ui/styles/text_styles.dart';
 
 import 'colors_app.dart';
 
@@ -61,6 +61,8 @@ class ButtonStyles {
     ),
   );
 
+}
 
-
+extension ButtonStylesExtensions on BuildContext{
+  ButtonStyles get buttonStyles => ButtonStyles.instance;
 }

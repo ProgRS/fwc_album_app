@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import  'package:fwc_album_app/app/core/styles/colors_app.dart';
+import  'package:fwc_album_app/app/core/ui/styles/colors_app.dart';
 class TextStyles {
    static TextStyles? _instance;
    TextStyles._();
@@ -47,7 +47,8 @@ class TextStyles {
    );
 
    TextStyle get textSecundaryFontExtraBold => TextStyle(
-       fontWeight: FontWeight.w800, fontFamily: primaryFont
+       fontWeight: FontWeight.w800, fontFamily: secundartFont
+
    );
 
    TextStyle get labelTextField => textSecundaryFontRegular.copyWith(
@@ -57,6 +58,8 @@ class TextStyles {
    TextStyle get textSecundaryFontExtraBoldPrimaryColor => textSecundaryFontExtraBold.copyWith(
        color: ColorsApp.instance.primary
    );
+
+
 }
 
 extension TextStylesExtensions on BuildContext {
