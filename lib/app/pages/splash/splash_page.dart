@@ -18,50 +18,48 @@ class _SplashPageState extends State<SplashPage> with Loader<SplashPage>, Messag
   Widget build(BuildContext context) {
 
     return Scaffold(
-    //backgroundColor: Colors.red,
-    appBar: AppBar(
-      title: const Text('Splash Page'),),
-    body: Center(
-      child: Column(
-        children: [
-          ElevatedButton(
-          onPressed: () async {
-            showLoader();
-           await Future.delayed(Duration(seconds: 2));
-           hideLoader();
-          },
-          style: ButtonStyles.instance.primaryButton,
-          child: Text('Salvar'),
-    ),
-          OutlinedButton(
-            onPressed: (){
-                showError('Erro no botão outline');
-            },
-            style: ButtonStyles.instance.primaryOutlineButton,
-            child: Text('Salvar'),
+      backgroundColor: context.colors.primary,
+      body: DecoratedBox(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('images/background_splash.png'),
+            fit: BoxFit.cover,
           ),
-          TextField(),
-          Button(
-             onPressed: (){
-               showInfo('Info no botão outline');
-             },
-              style: ButtonStyles.instance.yellowButton,
-              labelStyle: context.textStyles.textPrimaryFontBold,
-              label: 'Salvar'),
-          Button.primary(
-              width: MediaQuery.of(context).size.width * .9,
-              height: 30,
-              onPressed: (){
-                    showSuccess('Success no botão Outline');
-              },
-              label: 'Salvar'),
-              RoundedButton(
-                  icon: Icons.add,
-                  onPressed: (){}
-              )
+        ),
+      child: Stack(
+        children: [ 
+        Align(
+            alignment: Alignment.topCenter,
 
+            child: Padding(
+              padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * .08),
+              child: Image.asset('images/fifa_logo.png',
+                  height: MediaQuery.of(context).size.height *.25,
+              ),
+            )
+        ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding:  EdgeInsets.only(bottom: MediaQuery.of(context).size.height * .19),
+              child: Button(
+                width: MediaQuery.of(context).size.width * .9,
+                 onPressed: (){},
+                  style: context.buttonStyles.yellowButton,
+                  labelStyle: context.textStyles.textSecundaryFontExtraBoldPrimaryColor,
+                  label: 'Acessar'),
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding:  const EdgeInsets.only(bottom:20),
+              child: Image.asset('images/bandeiras.png')
+            ),
+          )
         ],
-      ),),
+      ),
+    ),
     );
   }
 }
