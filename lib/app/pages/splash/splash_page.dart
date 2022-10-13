@@ -3,6 +3,7 @@ import 'package:fwc_album_app/app/core/ui/styles/button_styles.dart';
 import 'package:fwc_album_app/app/core/ui/styles/colors_app.dart';
 import 'package:fwc_album_app/app/core/ui/styles/text_styles.dart';
 import 'package:fwc_album_app/app/core/ui/widgets/button.dart';
+import 'package:fwc_album_app/app/core/ui/widgets/rounded_button.dart';
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});
 
@@ -39,6 +40,10 @@ class SplashPage extends StatelessWidget {
               onPressed: (){},
 
               label: 'Salvar'),
+              RoundedButton(
+                  icon: Icons.add,
+                  onPressed: (){}
+              )
 
         ],
       ),),
